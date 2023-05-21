@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 function FeaturesSelector({
-  onChange = () => {},
+  onChange = () => {}, 
   onSubmit,
   features,
   setFeatures,

@@ -3,18 +3,18 @@ import styledComponents from "styled-components";
 import DocumentCard from "./DocumentCard";
 
 function Navigation({ docs, selectedDocId, onDocumentCardClick, isVerifier }) {
-  console.log(isVerifier);
+  console.log("isVerifers: ",isVerifier);
   return (
     <NavigationStyle>
       {Object.keys(docs).map((docName) => {
         const doc = docs[docName];
         return (
           <DocumentCard
-            key={doc._id}
+            key={doc._id} 
             doc={doc}
-            isSelected={doc[0]._id == selectedDocId}
+            isSelected={doc[0]._id === selectedDocId}
             onUserCardClick={onDocumentCardClick}
-            isVerifier={isVerifier}
+            // isVerifier={isVerifier}
           />
         );
       })}

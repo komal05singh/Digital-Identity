@@ -27,15 +27,16 @@ function App() {
 
   const [showDialog, setShowDialog] = useState(false);
 
-  const handleShare = (to) => {
+  const handleShare = (inp) => {
+    console.log("handle share function")
     setLoading(true);
     const from = selectedDoc[0].userName;
-    // const to = document.getElementById("user-to-share").value;
+    const to = document.getElementById("user-to-share").value;
     if (to === "") {
       alert("Enter username");
       return;
     }
-    console.log(to);
+    console.log("to value  =  ",to)
     const docName = selectedDoc[0].documentName;
 
     fetch(`http://127.0.0.1:5000/view/${from}/${to}/${docName}/share`)
@@ -63,6 +64,8 @@ function App() {
       .then((result) => {
         setLoading(false);
         setData(result);
+        console.log("App.js console")
+        console.log(data);  //tesing getting data or not
       })
       .catch((error) => console.log("error", error));
   };
@@ -77,8 +80,10 @@ function App() {
 
   useEffect(() => {
     setSelectedHistoryIndex(0);
+    console.log("😒😒")
   }, [selectedDoc]);
 
+  console.log("selected doc ") //testing
   console.log(selectedDoc);
 
   return (

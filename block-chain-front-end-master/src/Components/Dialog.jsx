@@ -6,18 +6,18 @@ import styled from "styled-components";
 function Dialog({ header, body, showDialog, setShowDialog, className }) {
   const [came, setCame] = useState(false);
   const [out, setOut] = useState(!showDialog);
-
+ 
   useEffect(() => {
     if (showDialog) {
       setOut(false);
       setTimeout(() => {
         setCame(true);
-      }, 40);
+      }, 40);  //40  to 4000 now orignal
     } else {
       setCame(false);
       setTimeout(() => {
         setOut(true);
-      }, 400);
+      }, 400); //400 to 4000 now orignal
     }
   }, [showDialog]);
 
@@ -45,7 +45,9 @@ function Dialog({ header, body, showDialog, setShowDialog, className }) {
       </div>
     </DialogStyle>
   ) : (
-    <></>
+    <>
+    {/* <div>bak sala</div> */}
+    </>
   );
 }
 

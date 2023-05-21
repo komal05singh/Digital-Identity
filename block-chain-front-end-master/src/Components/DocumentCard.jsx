@@ -9,7 +9,8 @@ function DocumentCard({ doc, isSelected, onUserCardClick, isVerifier }) {
       }}
       onClick={() => onUserCardClick(doc)}
     >
-      {isVerifier && <div className="name username">{doc[0].userName}</div>}
+      {<div className="name username">{doc[0].userName}</div>}  
+      {/* {isVerifier && <div className="name username">{doc[0].userName}</div>} orignal */}
       <div className="name">{doc[0].documentName}</div>
     </DocumentCardStyle>
   );
